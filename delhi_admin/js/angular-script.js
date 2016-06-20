@@ -19,6 +19,13 @@ $('#categoryForm').css('display', 'none');
 //console.log("data inserted successfully");
 }});
 }
+
+$scope.currentUser={};
+$scope.editInfo=function(info){
+	$scope.currentUser=info;
+	$(#categoryForm).slideUp();
+	$(#editForm).slideToggle();
+}
 }]);
 
 
