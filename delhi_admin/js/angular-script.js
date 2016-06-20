@@ -9,7 +9,7 @@ $scope.details = data;
 });
 }
 
-/*$scope.insertInfo = function(info){
+$scope.insertInfo = function(info){
 $http.post('DataBaseFiles/insertDetails.php',{"category_name":info.category_name}).success(function(data)
 {
 if (data == true) {
@@ -18,7 +18,7 @@ getInfo();
 $('#categoryForm').css('display', 'none');
 //console.log("data inserted successfully");
 }});
-}*/
+}
 }]);
 
 
