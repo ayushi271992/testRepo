@@ -8,7 +8,6 @@ $http.post('DataBaseFiles/categoryDetails.php').success(function(data){
 $scope.details = data;
 });
 }
-
 $scope.insertInfo = function(info){
 $http.post('DataBaseFiles/insertDetails.php',{"category_name":info.category_name}).success(function(data)
 {
@@ -23,8 +22,33 @@ $('#categoryForm').css('display', 'none');
 $scope.currentUser={};
 $scope.editInfo=function(info){
 	$scope.currentUser=info;
-	$(#categoryForm).slideUp();
-	$(#editForm).slideToggle();
+
+	//$(#categoryForm).slideUp();
+	$('#editForm').css('display', 'block');
+}
+$scope.showInsertForm=function()
+{
+	$('#categoryForm').css('display', 'block');
+}
+$scope.updateInfo = function(info){
+//$scope.content="somethhing went wrong"
+$http.post('DataBaseFiles/updateDetails.php',{"category_id":info.category_id,"category_name":info.category_name}).success(function(data)
+{
+ $scope.show_form=true;
+if (data == true) {
+ 	$scope.content=data;
+ getInfo();
+$('#editForm').css('display', 'none');
+}
+});
+}
+
+$scope.deleteInfo = function(info){
+$http.post('DataBaseFiles/deleteDetails.php',{"del_category_id":info.category_id}).success(function(data){
+if (data == true) {
+getInfo();
+}
+});
 }
 }]);
 
