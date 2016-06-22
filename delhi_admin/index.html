@@ -20,7 +20,7 @@
 <nav class="navbar navbar-default">
 <div class="navbar-header">
 <div class="alert alert-default navbar-brand search-box">
-<button class="btn btn-primary" ng-show="show_form" ng-click="formToggle()">Add Category <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+<button class="btn btn-primary" ng-click="showInsertForm()">Add Category <span class="glyphicon glyphicon-plus" area-hidden="true"></span></button>
 </div>
 <div class="alert alert-default input-group search-box">
 <span class="input-group-btn">
@@ -30,12 +30,12 @@
 </div>
 </nav>
 
-<div class="col-md-6 col-md-offset-3">
+<div class="col-md-6 col-md-offset-3" >
 
 <!-- Include form template which is used to insert data into database -->
 <div ng-include src="'templates/form.html'"></div>
 
-<!-- Include form template which is used to edit and update data into database -->
+<!--Include form template which is used to edit and update data into database-->
 <div ng-include src="'templates/editForm.html'"></div>
 </div>
 <div class="clearfix"></div>
@@ -52,7 +52,6 @@
 <tr ng-repeat="detail in details| filter:search_query">
 <td>{{detail.category_id}}</td>
 <td>{{detail.category_name}}</td>
-
 <td>
 <button class="btn btn-warning" ng-click="editInfo(detail)" title="Edit"><span class="glyphicon glyphicon-edit"></span></button>
 </td>
@@ -61,7 +60,6 @@
 </td>
 </tr>
 </table>
-</div>
 </div>
 </div>
 <!-- Include controller -->
