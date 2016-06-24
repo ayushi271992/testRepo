@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp" >
 
 <head>
 
@@ -9,28 +9,29 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Delhi Yatra</title>
+    <title>Delhi Destinasia</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+
+    <!-- Slider CSS -->
+    <link rel="stylesheet" href="css/slider.css" type="text/css">
 
     <!-- Custom Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css" type="text/css">
 
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="../css/magnific-popup.css" type="text/css">
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/creative.css" type="text/css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!--     AngularJS Code -->
+    <link href='https://code.angularjs.org/1.2.2/angular.js'>
+    <link href='https://code.angularjs.org/1.2.2/angular.min.js'>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 
 </head>
 
@@ -40,13 +41,7 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>-->
-                <a class="navbar-brand page-scroll" href="#page-top">Delhi Yatra</a>
+                <a class="navbar-brand page-scroll" href="#page-top">Delhi Destinasia</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -59,19 +54,27 @@
                         <a class="page-scroll" href="#services">Services</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Categories</a>
+                        <a class="page-scroll" href="#categories">Categories</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container-fluid -->
     </nav>
 
     <header>
+        <div id="slider">
+            <figure>
+                <img src="img/h1.jpg">
+                <img src="img/h2.jpg">
+                <img src="img/h3.jpg">
+                <img src="img/h4.jpg">
+                <img src="img/h5.jpg">
+            </figure>
+
+        </div>
         <div class="header-content">
             <div class="header-content-inner">
                 <h1>NEVER STOP EXPLORING!!<br> YES, NEVER...</h1>
@@ -109,28 +112,28 @@
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-map-marker text-primary sr-icons"></i>
-                        <h3>Google Map</h3>
-                        <p class="text-muted">If geography is prose, maps are iconography.<</p>
+                        <h3><a href="#/googlemap"> Google Map </a> </h3>
+                        <p class="text-muted">If geography is prose, maps are iconography.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-subway text-primary sr-icons"></i>
-                        <h3>Metro Map</h3>
-                        <p class="text-muted">Easy reachble by metro!</p>
+                        <h3><a href="#/metromap"> Metro Map </a> </h3>
+                        <p class="text-muted">Easy reachable by metro!</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-smile-o text-primary sr-icons"></i>
-                        <h3>Filters</h3>
+                        <h3><a href="#/filters"> Filters </a> </h3>
                         <p class="text-muted">We provide you to search place according to your mood,age,location.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
-                        <h3>Attraction</h3>
+                        <h3><a href="/#attraction"> Attraction </a> </h3>
                         <p class="text-muted">Popular places are provided!</p>
                     </div>
                 </div>
@@ -143,24 +146,32 @@
                 </div>
     </section>
 
-    <section class="no-padding" id="portfolio">
+    <!-- <div ng-view></div> -->
+        <div class="view-animate-container">
+            <div ng-view class="view-animate"></div>
+        </div>
+        <hr />
+
+    <section class="no-padding" id="categories">
         <div class="container-fluid">
-            <div class="row no-gutter popup-gallery">
-                <div class="col-lg-4 col-sm-6">
-                    <a href="../img/portfolio/fullsize/1.jpg" class="portfolio-box">
+       
+            <!-- <div class="row no-gutter popup-gallery"> -->
+                <div class="col-lg-4 col-sm-6"> 
+                    <a href="#/gourmet" class="portfolio-box">
                         <img src="../img/portfolio/thumbnails/1.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                            
+                        
+                            <div class="portfolio-box-caption-content">           
                                 <div class="project-name text-faded">
                                     GOURMET
-                                </div>
+                                </div> 
                             </div>
                         </div>
                     </a>
                 </div>
+                
                 <div class="col-lg-4 col-sm-6">
-                    <a href="../img/portfolio/fullsize/2.jpg" class="portfolio-box">
+                    <a href="#/shopping" class="portfolio-box">
                         <img src="../img/portfolio/thumbnails/2.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -172,7 +183,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="../img/portfolio/fullsize/3.jpg" class="portfolio-box">
+                    <a href="#/funlovers" class="portfolio-box">
                         <img src="../img/portfolio/thumbnails/3.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -189,7 +200,7 @@
                 <br><br>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="../img/portfolio/fullsize/4.jpg" class="portfolio-box">
+                    <a href="#/temples" class="portfolio-box">
                         <img src="../img/portfolio/thumbnails/4.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -202,7 +213,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="../img/portfolio/fullsize/5.jpg" class="portfolio-box">
+                    <a href="#/music" class="portfolio-box">
                         <img src="../img/portfolio/thumbnails/5.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -215,7 +226,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="../img/portfolio/fullsize/6.jpg" class="portfolio-box">
+                    <a href="#/heritage" class="portfolio-box">
                         <img src="../img/portfolio/thumbnails/6.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -227,24 +238,11 @@
                         </div>
                     </a>
                 </div>
-            </div>
+  <!--           </div> -->
         </div>
     </section>
-    <div class="col-lg-12 text-center">
-    <br><br>
-    <a href="#contact" class="btn btn-primary btn-xl page-scroll">Any Queries??</a>
-    </div>
     </section>
 
-    <!-- <aside class="bg-dark">
-        <div class="container text-center">
-            <div class="call-to-action">
-                <h2>Free Download at Start Bootstrap!</h2>
-                <a href="http://startbootstrap.com/template-overviews/creative/" class="btn btn-default btn-xl sr-button">Download Now!</a>
-            </div>
-        </div>
-    </aside> -->
-    
     <section id="contact">
       <div class="bg-dark">
         <div class="container">
@@ -261,13 +259,17 @@
                 </div>
                 <div class="col-lg-4 text-center">
                     <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-                    <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
+                    <p><a href="mailto:your-email@your-domain.com">delhi_destinasia.com</a></p>
                 </div>
             </div>
         </div>
        </div>
     </section>
     <!-- jQuery -->
+    
+    <!-- AngularJS script -->
+    <script src="js/angular-script.js"></script>
+
     <script src="../js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
