@@ -20,20 +20,30 @@
 <input type="button" value="Update" ng-click="updateInfo(currentUser)"/>
 </div> -->
 <!-- Form used for updation of data into database -->
-<form class="form-horizontal alert alert-warning" id="editForm" hidden >
-<h3 class="text-center">Update Employee Details</h3>
+<form class="form-horizontal alert alert-warning" id="editForm" hidden name="editList">
+<h3 class="text-center">Update Category Details</h3>
 
 <div class="form-group">
-<label for="Name">Employee Id:</label>
-<input type="text" class="form-control" ng-model="currentUser.category_id" value="{{currentUser.category_id}}">
+<label for="Name">Category Id:</label>
+<input type="text" class="form-control" ng-model="currentUser.category_id" value="{{currentUser.category_id}}" name="category_id" required>
 </div>
 <div class="form-group">
-<label for="Name">Employee Name:</label>
-<input type="text" class="form-control" ng-model="currentUser.category_name" value="{{currentUser.category_name}}">
+<p class="text-danger" ng-show="editList.category_id.$invalid && editList.category_id.$dirty">
+<span ng-show="editList.category_id.$error.required">CategoryID is required.</span>
+ </p>
+</div>
+<div class="form-group">
+<label for="Name">Category Name:</label>
+<input type="text" class="form-control" ng-model="currentUser.category_name" value="{{currentUser.category_name}}" name="category_name" required>
+</div>
+<div class="form-group">
+<p class="text-danger" ng-show="editList.category_name.$invalid && editList.category_name.$dirty">
+<span ng-show="editList.category_name.$error.required">CategoryName is required.</span>
+ </p>
 </div>
 
 <div class="form-group">
-<input type="button" ng-click="updateInfo(currentUser)" value="Update"/>
+<input type="button" class="btn btn-warning" ng-disabled="editList.$invalid" ng-click="updateInfo(currentUser)" value="Update"/>
 </div>
 </form>
 </body>
