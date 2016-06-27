@@ -75,17 +75,16 @@
  </select>
  </div>
  </span>
-</div>
+</div><!-- 
 <div ng-repeat="sub in subDetails" >
 {{sub.category_id}}
-</div>
+</div> -->
 
 <br></br>
 <div class="col-md-6 col-md-offset-3" >
-
 <!--Include form template which is used to insert data into database -->
- <div ng-include src="'templates/SubCategoryForm.html'"></div>
-
+ <div ng-include src="'templates/subCategoryForm.html'"></div>
+ <div ng-include src="'templates/editSubCategoryForm.html'"></div>
 </div>
 <div class="clearfix"></div>
 
@@ -101,35 +100,33 @@
 <th>{{content1}} Destination To</th>
 <th>{{content1}} Opening Time</th>
 <th>{{content1}} Closing Time</th>
-<th>{{content1}} Indian Fee</th>
-<th>{{content1}} Foreign Fee</th>
+<th>{{content1}} Cost</th>
 <th>{{content1}} Days Closed</th>
-<th>{{content1}} Photography</th>
 <th></th>
 <th></th>
 </tr>
 <tr ng-repeat="detail in subDetails| filter:search_query">
-<td>{{detail.historical_id}}</td>
-<td>{{detail.historical_Image_Url}}</td>
-<td>{{detail.historical_Image_Name}}</td>
-<td>{{detail.historical_Desc}}</td>
-<td>{{detail.historical_Metro}}</td>
-<td>{{detail.historical_to}}</td>
-<td>{{detail.historical_OpeningTime}}</td>
-<td>{{detail.historical_ClosingTime}}</td>
-<td>{{detail.historical_IndianFee}}</td>
-<td>{{detail.historical_ForeignerFee}}</td>
-<td>{{detail.historical_DaysClosed}}</td>
-<td>{{detail.historical_Photography}}</td>
+<td>{{detail.id}}</td>
+<td>{{detail.Image_Name}}</td>
+<td>{{detail.Image_Url}}</td>
+<td>{{detail.Desc}}</td>
+<td>{{detail.Metro}}</td>
+<td>{{detail.Destination_to}}</td>
+<td>{{detail.OpeningTime}}</td>
+<td>{{detail.ClosingTime}}</td>
+<td>{{detail.Cost}}</td>
+<td>{{detail.DaysClosed}}</td>
 <td>
-<button class="btn btn-warning" ng-click="editInfo(detail)" title="Edit"><span class="glyphicon glyphicon-edit"></span></button>
+<button class="btn btn-warning" ng-click="editSubcategoryInfo(detail)" title="Edit"><span class="glyphicon glyphicon-edit"></span></button>
 </td>
 <td>
-<button class="btn btn-danger" ng-click="deleteInfo(detail)" title="Delete"><span class="glyphicon glyphicon-trash"></span></button>
+<button class="btn btn-danger" ng-click="deleteSubcategoryInfo(detail,content1)" title="Delete"><span class="glyphicon glyphicon-trash"></span></button>
 </td>
 </tr>
 </table>
 </div> 
+hello
+{{something1}}
 </div>
 <!-- Include controller -->
 <script src="js/angular-script.js"></script>

@@ -1,0 +1,132 @@
+<!Doctype html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+</head>
+<body>
+<!-- <form class="form-horizontal alert alert-warning" id="editForm">
+<h3 class="text-center">Update Category Details Into Database</h3>
+<div class="form-group">
+<label >Category Id:</label>
+<input type="text" ng-model="currentSubcategory.category_id"/></br>
+</div>
+<div class="form-group">
+<label >Category Name:</label>
+<input type="text" ng-model="currentSubcategory.category_name"/></br>
+</div>
+<div class="form-group">
+<input type="button" value="Update" ng-click="updateInfo(currentSubcategory)"/>
+</div> -->
+<!-- Form used for updation of data into database -->
+<form class="form-horizontal alert alert-warning" id="editSubcategoryForm" hidden name="editSubcategoryList">
+<h3 class="text-center">Update Category Details</h3>
+
+<div class="form-group">
+<label for="Name">{{content1}} Id:</label>
+<input type="text" class="form-control" ng-model="currentSubcategory.id" value="{{currentSubcategory.id}}" name="id" required>
+</div>
+<div class="form-group">
+<p class="text-danger" ng-show="editSubcategoryList.id.$invalid && editSubcategoryList.id.$dirty">
+<span ng-show="editSubcategoryList.id.$error.required">CategoryID is required.</span>
+ </p>
+</div>
+<div class="form-group">
+<label for="Name">{{content1}} Name:</label>
+<input type="text" class="form-control" ng-model="currentSubcategory.Image_Name" value="{{currentSubcategory.Image_Name}}" name="Image_Name" required>
+</div>
+<div class="form-group">
+<p class="text-danger" ng-show="editSubcategoryList.Image_Name.$invalid && editSubcategoryList.Image_Name.$dirty">
+<span ng-show="editSubcategoryList.Image_Name.$error.required">CategoryName is required.</span>
+ </p>
+</div>
+
+<div class="form-group">
+<label for="Name">{{content1}} Url:</label>
+<input type="text" class="form-control" ng-model="currentSubcategory.Image_Url" value="{{currentSubcategory.Image_Url}}" name="Image_Url" required>
+</div>
+<div class="form-group">
+<p class="text-danger" ng-show="editSubcategoryList.Image_Url.$invalid && editSubcategoryList.Image_Url.$dirty">
+<span ng-show="editSubcategoryList.Image_Url.$error.required">CategoryName is required.</span>
+ </p>
+</div>
+
+<div class="form-group">
+<label for="Name">{{content1}} Description:</label>
+<input type="text" class="form-control" ng-model="currentSubcategory.Desc" value="{{currentSubcategory.Desc}}" name="Desc" required>
+</div>
+<div class="form-group">
+<p class="text-danger" ng-show="editSubcategoryList.Desc.$invalid && editSubcategoryList.Desc.$dirty">
+<span ng-show="editSubcategoryList.Desc.$error.required">CategoryName is required.</span>
+ </p>
+</div>
+
+<div class="form-group">
+<label for="Name">{{content1}} Nearest Metro Station:</label>
+<input type="text" class="form-control" ng-model="currentSubcategory.Metro" value="{{currentSubcategory.Metro}}" name="Metro" required>
+</div>
+<div class="form-group">
+<p class="text-danger" ng-show="editSubcategoryList.Metro.$invalid && editSubcategoryList.Metro.$dirty">
+<span ng-show="editSubcategoryList.Metro.$error.required">CategoryName is required.</span>
+ </p>
+</div>
+
+<div class="form-group">
+<label for="Name">{{content1}} Destination To:</label>
+<input type="text" class="form-control" ng-model="currentSubcategory.Destination_to" value="{{currentSubcategory.Destination_to}}" name="Destination_to" required>
+</div>
+<div class="form-group">
+<p class="text-danger" ng-show="editSubcategoryList.Destination_to.$invalid && editSubcategoryList.Destination_to.$dirty">
+<span ng-show="editSubcategoryList.Destination_to.$error.required">CategoryName is required.</span>
+ </p>
+</div>
+
+<div class="form-group">
+<label for="Name">{{content1}} Opening Time:</label>
+<input type="text" class="form-control" ng-model="currentSubcategory.OpeningTime" value="{{currentSubcategory.OpeningTime}}" name="OpeningTime" required>
+</div>
+<div class="form-group">
+<p class="text-danger" ng-show="editSubcategoryList.OpeningTime.$invalid && editSubcategoryList.OpeningTime.$dirty">
+<span ng-show="editSubcategoryList.OpeningTime.$error.required">CategoryName is required.</span>
+ </p>
+</div>
+
+<div class="form-group">
+<label for="Name">{{content1}} Closing Time:</label>
+<input type="text" class="form-control" ng-model="currentSubcategory.ClosingTime" value="{{currentSubcategory.ClosingTime}}" name="ClosingTime" required>
+</div>
+<div class="form-group">
+<p class="text-danger" ng-show="editSubcategoryList.ClosingTime.$invalid && editSubcategoryList.ClosingTime.$dirty">
+<span ng-show="editSubcategoryList.ClosingTime.$error.required">CategoryName is required.</span>
+ </p>
+</div>
+
+<div class="form-group">
+<label for="Name">{{content1}} Cost:</label>
+<input type="text" class="form-control" ng-model="currentSubcategory.Cost" value="{{currentSubcategory.Cost}}" name="Cost" required>
+</div>
+<div class="form-group">
+<p class="text-danger" ng-show="editSubcategoryList.Cost.$invalid && editSubcategoryList.Cost.$dirty">
+<span ng-show="editSubcategoryList.Cost.$error.required">CategoryName is required.</span>
+ </p>
+</div>
+
+<div class="form-group">
+<label for="Name">{{content1}} Days Closed:</label>
+<input type="text" class="form-control" ng-model="currentSubcategory.DaysClosed" value="{{currentSubcategory.DaysClosed}}" name="DaysClosed" required>
+</div>
+<div class="form-group">
+<p class="text-danger" ng-show="editSubcategoryList.DaysClosed.$invalid && editSubcategoryList.DaysClosed.$dirty">
+<span ng-show="editSubcategoryList.DaysClosed.$error.required">CategoryName is required.</span>
+ </p>
+</div>
+
+
+
+<div class="form-group">
+<input type="button" class="btn btn-warning" ng-disabled="editSubcategoryList.$invalid" ng-click="updateSubcategoryInfo(currentSubcategory,content1)" value="Update"/>
+</div>
+</form>
+</body>
+</html>

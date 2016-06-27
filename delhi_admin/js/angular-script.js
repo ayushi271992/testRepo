@@ -65,13 +65,69 @@ $scope.select_subCategory=function(info)
 	$('#subcategory_table').css('display','block');
 	$scope.content1=info;
 	getSubCategoryDetails(info);
+	$('#SubcategoryForm').css('display','block');
 }
 function getSubCategoryDetails(info){
 $http.post('DataBaseFiles/subcategoryDetails.php',{"SubCategoryName":info}).success(function(data){
 // Stored the returned data into scope
 $scope.subDetails = data;
+//$('#SubcategoryForm').css('display','block');
 });
 }
+
+$scope.insertInfoSubCategory = function(info,SubCategoryName){
+
+$http.post('DataBaseFiles/insertSubcategoryDetails.php',{"name":info.Subcategory_name,"url":info.Subcategory_url,
+	"desc":info.Subcategory_desc,"metro":info.Subcategory_metro,"destination_To":info.Subcategory_dest_to,
+	"opening_time":info.Subcategory_openingTime,"closing_time":info.Subcategory_closingTime,"cost":info.Subcategory_cost,
+	"daysClosed":info.Subcategory_daysClosed,"subcategoryName":SubCategoryName}).success(function(data)
+{
+if (data == true) {
+	
+// // Hide details insertion form
+$('#SubcategoryForm').css('display','none');
+getSubCategoryDetails(SubCategoryName);
+//console.log("data inserted successfully");
+}
+});
+}
+
+
+$scope.editSubcategoryInfo=function(info)
+{
+	$scope.currentSubcategory=info;
+	$('#editSubcategoryForm').css('display', 'block');
+}
+
+$scope.updateSubcategoryInfo=function(info,SubCategoryName)
+{
+	// $http.post('DataBaseFiles/updateSubcategoryDetails.php',{"id":info.id,"url":info.Image_Url,"subcategoryName":SubCategoryName}).success(function(data)
+	// {
+	$http.post('DataBaseFiles/updateSubcategoryDetails.php',{"id":info.id,"name":info.Image_Name,"url":info.Image_Url,
+	"desc":info.Desc,"metro":info.Metro,"destination_To":info.Destination_to,
+	"opening_time":info.OpeningTime,"closing_time":info.ClosingTime,"cost":info.Cost,
+	"daysClosed":info.DaysClosed,"subcategoryName":SubCategoryName}).success(function(data)
+{
+if (data == true) {
+	
+// // Hide details insertion form
+	// $('#editSubcategoryForm').css('display', 'none');
+	 getSubCategoryDetails(SubCategoryName);
+//console.log("data inserted successfully");
+//$scope.something1=SubCategoryName;
+}
+});
+
+}
+
+$scope.deleteSubcategoryInfo = function(info,SubCategoryName){
+$http.post('DataBaseFiles/deleteSubcategoryDetails.php',{"id":info.id,"subcategoryName":SubCategoryName}).success(function(data){
+ if (data == true) {
+ getSubCategoryDetails(SubCategoryName);
+ }
+});
+}
+
 }]);
 
 

@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect("localhost","root","","chalodelhi");
+$conn = mysqli_connect("localhost","root","","delhidb");
 
 // Check connection
 if (!$conn) {
