@@ -1,9 +1,14 @@
 #category_container{
 	background-color: #FFE4B5;
+	padding-right:15px;
+	padding-left:15px;
+	margin-right:auto;
+	margin-left:auto;
+	padding-top: 15px;
 }
 
 #category_row{
-	background-color: #FE5A1D;
+	background-color: #000;
 	color:white;
 
 }
@@ -18,9 +23,13 @@
 	margin-right: auto;
 	margin-top: 10px;
 	width: 100%;
+	cursor:pointer;
+	border-radius: 5%;
+	border: 1px solid	#380000 ;
+
 }
 
-#container1{
+#container1,#container2{
 	background-color: #FE5A1D;
 	margin-left: auto;
 	margin-right: auto;
@@ -31,6 +40,7 @@
 #info{
 	background-color: white;
 	margin-top: 40px;
+	margin-bottom:20px;
 }
 
 #show_image>img{

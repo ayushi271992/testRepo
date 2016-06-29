@@ -55,7 +55,7 @@
 </div>
  -->
 
-	<div class="container" id="category_container">
+	<div id="category_container">
 		<div ng-init="Spiritual_Divine()">
 			<div class="row" >
 				<div class="col-lg-12 text-center" id="category_row"> 
@@ -64,11 +64,11 @@
 	
 
 				<div class="col-md-3 col-lg-3" id='leftpanel'>
- 					<img ng-repeat="i in content2" ng-src="{{i.url}}" alt="{{i.alt}}" ng-click="Spiritual_Divine_openinfo(i)"/>
+ 					<img ng-repeat="i in content_spiritual" ng-src="{{i.url}}" alt="{{i.alt}}" ng-click="Spiritual_Divine_openinfo(i)"/>
 				</div>
 
-				<div class="col-md-9 col-lg-9" id='container1'>
-					<div class='col-md-12 col-lg-12' id='info' ng-repeat="data in content1" >	
+				<div class="col-md-9 col-lg-9" id='container6'>
+					<div class='col-md-12 col-lg-12' id='info' ng-repeat="data in content_spiritual_info" >	
 	  					<div class="row">
 	  					  	<div class="col-md-8 col-lg-8" id='show_image' >
 								<img ng-src="{{data.Spiritual_Divine_Image_Url}}" alt = "{{data.Spiritual_Divine_Image_Name}}" />
