@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp" >
+<html lang="en" ng-app="myApp" ng-controller="MyCtrl">
 
 <head>
 
@@ -26,12 +26,12 @@
     <link rel="stylesheet" href="../css/creative.css" type="text/css">
 
     <!--     AngularJS Code -->
-    <link href='https://code.angularjs.org/1.2.2/angular.js'>
+    <!--     <link href='https://code.angularjs.org/1.2.2/angular.js'>
     <link href='https://code.angularjs.org/1.2.2/angular.min.js'>
 
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+ -->    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 
 </head>
 
@@ -133,7 +133,7 @@
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
-                        <h3><a href="/#attraction"> Attraction </a> </h3>
+                        <h3><a href="#/attraction"> Attraction </a> </h3>
                         <p class="text-muted">Popular places are provided!</p>
                     </div>
                 </div>
@@ -146,24 +146,20 @@
                 </div>
     </section>
 
-    <!-- <div ng-view></div> -->
-        <div class="view-animate-container">
-            <div ng-view class="view-animate"></div>
-        </div>
-        <hr />
-
     <section class="no-padding" id="categories">
+    
+
         <div class="container-fluid">
        
             <!-- <div class="row no-gutter popup-gallery"> -->
                 <div class="col-lg-4 col-sm-6"> 
-                    <a href="#/gourmet" class="portfolio-box">
+                    <a href="#Food_Fanatic" class="portfolio-box page-scroll">
                         <img src="../img/portfolio/thumbnails/1.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                         
                             <div class="portfolio-box-caption-content">           
                                 <div class="project-name text-faded">
-                                    GOURMET
+                                    FOOD FANATIC
                                 </div> 
                             </div>
                         </div>
@@ -171,7 +167,7 @@
                 </div>
                 
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#/shopping" class="portfolio-box">
+                    <a href="#Shopaholic" class="portfolio-box page-scroll">
                         <img src="../img/portfolio/thumbnails/2.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -183,7 +179,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#/funlovers" class="portfolio-box">
+                    <a href="#Fun_Lovers" class="portfolio-box page-scroll">
                         <img src="../img/portfolio/thumbnails/3.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -200,20 +196,20 @@
                 <br><br>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#/temples" class="portfolio-box">
+                    <a href="#Spiritual_Divine" class="portfolio-box page-scroll">
                         <img src="../img/portfolio/thumbnails/4.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 
                                 <div class="project-name text-faded">
-                                    PLACE OF WORKSHIP
+                                    SPIRITUAL DIVINE
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#/music" class="portfolio-box">
+                    <a href="#Music_Mania" class="portfolio-box page-scroll">
                         <img src="../img/portfolio/thumbnails/5.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
@@ -226,13 +222,13 @@
                     </a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
-                    <a href="#/heritage" class="portfolio-box">
+                    <a href="#Heritage_Seeker" class="portfolio-box page-scroll">
                         <img src="../img/portfolio/thumbnails/6.jpg" class="img-responsive" alt="">
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 
                                 <div class="project-name text-faded">
-                                    HERITAGE
+                                    HERITAGE SEEKER
                                 </div>
                             </div>
                         </div>
@@ -242,6 +238,12 @@
         </div>
     </section>
     </section>
+
+        <!-- <div ng-view></div> -->
+        <!-- <div class="view-animate-container">
+            <div ng-view class="view-animate"></div>
+        </div>
+        <hr /> -->
 
     <section id="contact">
       <div class="bg-dark">
@@ -265,10 +267,45 @@
         </div>
        </div>
     </section>
+
+    <<!-- section id="Food_Fanatic">
+        <div ng-include src="'templates/Food_Fanatic.html'">
+        </div>
+                
+    </section>
+
+     <section id="Shopaholic">
+        <div ng-include src="'templates/Shopaholic.html'">
+        </div>
+    </section>    
+     -->
+    <!-- <section id="Fun_Lovers">
+        <div ng-include src="'templates/Fun_Lovers.html'">
+        </div>
+    </section> -->
+
+<!--     <section id="Spiritual_Divine">
+        <div ng-include src="'templates/Spiritual_Divine.html'">
+        </div>
+    </section>
+
+    <section id="Music_Mania">
+        <div ng-include src="'templates/Music_Mania.html'">
+        </div>
+    </section>
+ -->
+    <section id="Heritage_Seeker">
+        <div ng-include src="'templates/Heritage_Seeker.html'">
+        </div>
+    </section>   
     <!-- jQuery -->
     
+    
     <!-- AngularJS script -->
-    <script src="js/angular-script.js"></script>
+    <!-- <script src="js/angular-script.js"></script> -->
+
+    <!-- Templates script -->
+    <script src="js/angular.js"></script>
 
     <script src="../js/jquery.js"></script>
 

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shopaholic</title>
+<head>
+
+	<!-- Bootstrap Core CSS -->
+	<link rel="stylesheet" href="../../css/bootstrap.min.css" type="text/css">
+
+	<link rel="stylesheet" href="./css/category_style.css" type="text/css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+</head>
+<body >
+
+<!-- <div ng-app="myApp" ng-controller="MyCtrl" ng-init="Shopaholic()">
+	
+	<div id='header' > 
+		<h1>Shopaholic</h1>
+	</div>
+
+
+	<div id='leftpanel' >
+ 		<img  ng-repeat="i in content2" ng-src="{{i.url}}" alt="{{i.alt}}"   ng-click="Shopaholic_openinfo(i)"/>
+	</div>
+
+
+	<div id='container1'>
+	
+	  	<div class='placeinfo' id='info' ng-repeat="data in content1" >	
+
+			<div id='show_image' >
+				<img ng-src="{{data.Shopaholic_Image_Url}}" alt = "{{data.Shopaholic_Image_Name}}" />
+			</div>
+
+			<div  id='show_note'>
+				{{data.Shopaholic_Id}} 			<br>
+				{{data.Shopaholic_Image_Name}} 	<br>
+				Opening Time : {{data.Shopaholic_Opening_Time}} 	<br>
+				Closing Time : {{data.Shopaholic_Closing_Time}} 	<br>
+				Days Closed : {{data.Shopaholic_Days_Closed}} 	<br>
+				Charges : {{data.Shopaholic_Cost}} 			<br>
+				Nearest Metro Station : {{data.Shopaholic_Nearest_Metro_Station}} 	
+			</div>
+
+			<div  id='show_description'>
+				{{data.Shopaholic_Description}}
+			</div>
+			
+		</div> 
+	</div>
+</div>
+ -->
+
+	<div class="container" id="category_container">
+		<div ng-init="Shopaholic()">
+			<div class="row" >
+				<div class="col-lg-12 text-center" id="category_row"> 
+					<h1>SHOPAHOLIC</h1>
+				</div>
+	
+
+				<div class="col-md-3 col-lg-3" id='leftpanel'>
+ 					<img ng-repeat="i in content2" ng-src="{{i.url}}" alt="{{i.alt}}" ng-click="Shopaholic_openinfo(i)"/>
+				</div>
+
+				<div class="col-md-9 col-lg-9" id='container1'>
+					<div class='col-md-12 col-lg-12' id='info' ng-repeat="data in content1" >	
+	  					<div class="row">
+	  					  	<div class="col-md-8 col-lg-8" id='show_image' >
+								<img ng-src="{{data.Shopaholic_Image_Url}}" alt = "{{data.Shopaholic_Image_Name}}" />
+							</div>
+
+							<div class="col-md-4 col-lg-4">
+								<div id='show_note'>
+									{{data.Shopaholic_Id}} 			<br>
+									{{data.Shopaholic_Image_Name}} 	<br>
+									Opening Time : {{data.Shopaholic_Opening_Time}} 	<br>
+									Closing Time : {{data.Shopaholic_Closing_Time}} 	<br>
+									Days Closed : {{data.Shopaholic_Days_Closed}} 	<br>
+									Charges : {{data.Shopaholic_Cost}} 			<br>
+									Nearest Metro Station : {{data.Shopaholic_Nearest_Metro_Station}} 	
+								</div>
+							</div>
+						</div>
+						<br><br>
+
+					<div  class="col-md-12 col-lg-12" id='show_description'>
+						{{data.Shopaholic_Description}}
+					</div>
+					</div> 
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+</body>
+</html>
+
+	
+
+
+
+
+
+

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Music_Mania</title>
+<head>
+
+	<!-- Bootstrap Core CSS -->
+	<link rel="stylesheet" href="../../css/bootstrap.min.css" type="text/css">
+
+	<link rel="stylesheet" href="./css/category_style.css" type="text/css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+</head>
+
+<body >
+
+<!-- <div ng-app="myApp" ng-controller="MyCtrl" ng-init="Music_Mania()">
+	
+	<div id='header' > 
+		<h1>Music_Mania</h1>
+	</div>
+
+
+	<div id='leftpanel' >
+ 		<img  ng-repeat="i in content2" ng-src="{{i.url}}" alt="{{i.alt}}"   ng-click="Music_Mania_openinfo(i)"/>
+	</div>
+
+
+	<div id='container1'>
+	
+	  	<div class='placeinfo' id='info' ng-repeat="data in content1" >	
+
+			<div id='show_image' >
+				<img ng-src="{{data.Music_Mania_Image_Url}}" alt = "{{data.Music_Mania_Image_Name}}" />
+			</div>
+
+			<div  id='show_note'>
+				{{data.Music_Mania_Id}} 			<br>
+				{{data.Music_Mania_Image_Name}} 	<br>
+				Opening Time : {{data.Music_Mania_Opening_Time}} 	<br>
+				Closing Time : {{data.Music_Mania_Closing_Time}} 	<br>
+				Days Closed : {{data.Music_Mania_Days_Closed}} 	<br>
+				Charges : {{data.Music_Mania_Cost}} 			<br>
+				Nearest Metro Station : {{data.Music_Mania_Nearest_Metro_Station}} 	
+			</div>
+
+			<div  id='show_description'>
+				{{data.Music_Mania_Description}}
+			</div>
+			
+		</div> 
+	</div>
+</div>
+ -->
+
+	<div class="container" id="category_container">
+		<div ng-init="Music_Mania()">
+			<div class="row" >
+				<div class="col-lg-12 text-center" id="category_row"> 
+					<h1><B>MUSIC MANIA</B></h1>
+				</div>
+	
+
+				<div class="col-md-3 col-lg-3" id='leftpanel'>
+ 					<img ng-repeat="i in content2" ng-src="{{i.url}}" alt="{{i.alt}}" ng-click="Music_Mania_openinfo(i)"/>
+				</div>
+
+				<div class="col-md-9 col-lg-9" id='container1'>
+					<div class='col-md-12 col-lg-12' id='info' ng-repeat="data in content1" >	
+	  					<div class="row">
+	  					  	<div class="col-md-8 col-lg-8" id='show_image' >
+								<img ng-src="{{data.Music_Mania_Image_Url}}" alt = "{{data.Music_Mania_Image_Name}}" />
+							</div>
+
+							<div class="col-md-4 col-lg-4">
+								<div id='show_note'>
+									{{data.Music_Mania_Id}} 			<br>
+									{{data.Music_Mania_Image_Name}} 	<br>
+									Opening Time : {{data.Music_Mania_Opening_Time}} 	<br>
+									Closing Time : {{data.Music_Mania_Closing_Time}} 	<br>
+									Days Closed : {{data.Music_Mania_Days_Closed}} 	<br>
+									Charges : {{data.Music_Mania_Cost}} 			<br>
+									Nearest Metro Station : {{data.Music_Mania_Nearest_Metro_Station}} 	
+								</div>
+							</div>
+						</div>
+						<br><br>
+
+					<div  class="col-md-12 col-lg-12" id='show_description'>
+						{{data.Music_Mania_Description}}
+					</div>
+					</div> 
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+</body>
+</html>
+
+	
+
+
+
+
+
+

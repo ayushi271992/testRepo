@@ -1,0 +1,54 @@
+#category_container{
+	background-color: #FFE4B5;
+}
+
+#category_row{
+	background-color: #FE5A1D;
+	color:white;
+
+}
+
+#leftpanel{
+	background-color: #FFF5EE;
+	width:25%;
+}
+
+#leftpanel > img{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	width: 100%;
+}
+
+#container1{
+	background-color: #FE5A1D;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	display: none;
+}
+
+#info{
+	background-color: white;
+	margin-top: 40px;
+}
+
+#show_image>img{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	width: 100%;
+}
+
+#show_description{
+	background-color: #FFF0F5;
+}
+
+#show_note{
+	background-color: #FFF5EE;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	width: 100%;
+	float: right;
+}
