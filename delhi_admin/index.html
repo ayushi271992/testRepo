@@ -65,16 +65,19 @@
 <div class="bg-primary" id="subcategory_header">
 	<h3 class="text-center">Want to add details to Sub-Category</h3>
 </div>
-<div>
+<br>
+<div class="row">
+<div class="col-md-3 col-md-offset-1 ">
 <h3>Select Sub-Category:</h3>
-<span>
+</div>
+<div>
 <div id="mainselection">
 <select  ng-model="selected" ng-change="changedValue(selected)" ng-click="select_subCategory(selected)">
 	<option ng-repeat="detail in details" value="{{detail.category_name}}">{{detail.category_name}}
 	</option>
  </select>
  </div>
- </span>
+ </div>
 </div><!-- 
 <div ng-repeat="sub in subDetails" >
 {{sub.category_id}}
@@ -94,7 +97,9 @@
 <tr>
 <th>{{content1}} ID</th>
 <th>{{content1}} Name</th>
-<th>{{content1}} URL</th>
+<th>{{content1}} URL1</th>
+<th>{{content1}} URL2</th>
+<th>{{content1}} URL3</th>
 <th>{{content1}} Description</th>
 <th>{{content1}} Nearest Metro</th>
 <th>{{content1}} Destination To</th>
@@ -108,7 +113,9 @@
 <tr ng-repeat="detail in subDetails| filter:search_query">
 <td>{{detail.id}}</td>
 <td>{{detail.Image_Name}}</td>
-<td>{{detail.Image_Url}}</td>
+<td>{{detail.Image_Url1}}</td>
+<td>{{detail.Image_Url2}}</td>
+<td>{{detail.Image_Url3}}</td>
 <td>{{detail.Desc}}</td>
 <td>{{detail.Metro}}</td>
 <td>{{detail.Destination_to}}</td>

@@ -19,7 +19,7 @@ if($rowcount>0)
 while($row=mysqli_fetch_array($result,MYSQLI_ASSOC))
 {
 			$data[]=array(
-			'url'=>$row['Spiritual_Divine_Image_Url'],
+			'url1'=>$row['Spiritual_Divine_Image_Url1'],
 			'name'=>$row['Spiritual_Divine_Image_Name'],
 			'alt'=>$row['Spiritual_Divine_Image_Name']
 		);

@@ -23,7 +23,9 @@ while($row=mysqli_fetch_array($result,MYSQLI_ASSOC))
 	//echo $row['Historical_Id'] ." ". $row['Historical_Image_Name'];
 			$data[]=array(
 			'id'=>$row[$tablename.'_Id'],
-			'Image_Url'=>$row[$tablename.'_Image_Url'],
+			'Image_Url1'=>$row[$tablename.'_Image_Url1'],
+			'Image_Url2'=>$row[$tablename.'_Image_Url2'],
+			'Image_Url3'=>$row[$tablename.'_Image_Url3'],
 			'Image_Name'=>$row[$tablename.'_Image_Name'],
 			'Desc'=>$row[$tablename.'_Description'],
 			'Metro'=>$row[$tablename.'_Nearest_Metro_Station'],

@@ -6,7 +6,9 @@ $tablename = mysqli_real_escape_string($conn,$data->subcategoryName);
 //$tablename="Heritage_Seeker";
 $id=mysqli_real_escape_string($conn,$data->id);
 $name= mysqli_real_escape_string($conn,$data->name);
-$url= mysqli_real_escape_string($conn,$data->url);
+$url1= mysqli_real_escape_string($conn,$data->url1);
+$url2= mysqli_real_escape_string($conn,$data->url2);
+$url3= mysqli_real_escape_string($conn,$data->url3);
 $desc= mysqli_real_escape_string($conn,$data->desc);
 $metro= mysqli_real_escape_string($conn,$data->metro);
 $destination_to= mysqli_real_escape_string($conn,$data->destination_To);
@@ -19,7 +21,7 @@ $daysClosed= mysqli_real_escape_string($conn,$data->daysClosed);
 
  // $sql="INSERT into `$tablename` (".$tablename."_Image_Url,".$tablename."_Image_Name,".$tablename."_Description,".$tablename."_Nearest_Metro_Station,".$tablename."_Destination_To,".$tablename."_Opening_Time,".$tablename."_Closing_Time,".$tablename."_Cost,".$tablename."_Days_Closed) VALUES ('".$url."','".$name."','".$desc."','".$metro."','".$destination_to."','".$openingTime."','".$closingTime."','".$cost."','".$daysClosed."')";
 
-$sql="UPDATE `$tablename` SET ".$tablename."_Image_Url='".$url."',".$tablename."_Image_Name='".$name."', ".$tablename."_Description='".$desc."',".$tablename."_Nearest_Metro_Station='".$metro."',".$tablename."_Destination_To='".$destination_to."',".$tablename."_Opening_Time='".$openingTime."',".$tablename."_Closing_Time='".$closingTime."',".$tablename."_Cost='".$cost."',".$tablename."_Days_Closed='".$daysClosed."' where ".$tablename."_Id=$id";
+$sql="UPDATE `$tablename` SET ".$tablename."_Image_Url1='".$url1."',".$tablename."_Image_Url2='".$url2."',".$tablename."_Image_Url3='".$url3."',".$tablename."_Image_Name='".$name."', ".$tablename."_Description='".$desc."',".$tablename."_Nearest_Metro_Station='".$metro."',".$tablename."_Destination_To='".$destination_to."',".$tablename."_Opening_Time='".$openingTime."',".$tablename."_Closing_Time='".$closingTime."',".$tablename."_Cost='".$cost."',".$tablename."_Days_Closed='".$daysClosed."' where ".$tablename."_Id=$id";
  if (!mysqli_query($conn,$sql)) {
   die('Error: ' . mysqli_error($conn));
   }
